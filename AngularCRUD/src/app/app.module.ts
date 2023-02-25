@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CreateRegistrationComponent } from './create-registration/create-registration.component';
 import { RegistrationListComponent } from './registration-list/registration-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
