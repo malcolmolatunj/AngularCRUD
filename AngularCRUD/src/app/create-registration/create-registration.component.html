@@ -1,1 +1,134 @@
-<p>create-registration works!</p>
+<div class="registration-form m-3 p-4">
+  <form>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First name" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last name" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="email@domain.com" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="123-456-7890" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Weight</mat-label>
+          <input type="number" matInput />
+          <mat-hint>in kilograms</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Height</mat-label>
+          <input type="number" matInput />
+          <mat-hint>in meters</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label id="trainer-radio-group-label">Do you require a trainer?</label>
+        <mat-radio-group
+          aria-labelledby="trainer-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            *ngFor="let option of ['Yes', 'No']"
+            class="example-radio-button"
+            [value]="option"
+          >
+            {{ option }}</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label id="gender-radio-group-label">Gender</label>
+        <mat-radio-group
+          aria-labelledby="gender-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            *ngFor="let gender of ['Male', 'Female']"
+            class="example-radio-button"
+            [value]="gender"
+          >
+            {{ gender }}</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Select Package</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let package of packages" [value]="package">{{
+              package
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Which of the following is important to you?</mat-label>
+          <mat-select multiple>
+            <mat-option *ngFor="let reason of reasons" [value]="reason">{{
+              reason
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <label id="revisit-radio-group-label"
+          >Have you been to this gym before?</label
+        >
+        <mat-radio-group
+          aria-labelledby="revisit-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button
+            *ngFor="let option of ['Yes', 'No']"
+            class="example-radio-button"
+            [value]="option"
+          >
+            {{ option }}</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Inquiry date</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-hint>DD MMM YYYY</mat-hint>
+          <mat-datpicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datpicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

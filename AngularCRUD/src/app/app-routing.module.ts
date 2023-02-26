@@ -7,24 +7,29 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 const routes: Routes = [
   {
     path: '',
-    component: CreateRegistrationComponent
+    redirectTo: 'register',
+    pathMatch: 'full',
+  },
+  {
+    path: 'register',
+    component: CreateRegistrationComponent,
   },
   {
     path: 'edit/:id',
-    component: CreateRegistrationComponent
+    component: CreateRegistrationComponent,
   },
   {
     path: 'list',
-    component: RegistrationListComponent
+    component: RegistrationListComponent,
   },
   {
     path: 'detail/:id',
-    component: UserDetailComponent
-  }
+    component: UserDetailComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
